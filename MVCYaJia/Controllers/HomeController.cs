@@ -43,10 +43,7 @@ namespace MVCYaJia.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (login.Username == "123" && login.Password == "123")
-                {
-                    return Redirect("/");
-                }
+                return Redirect("/");
             }
 
             return View();

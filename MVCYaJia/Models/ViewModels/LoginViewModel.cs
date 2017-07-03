@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MVCYaJia.Models.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : IValidatableObject
     {
         [Required]
         [DisplayName("帳號")]
@@ -16,5 +16,17 @@ namespace MVCYaJia.Models.ViewModels
         [DisplayName("密碼")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (this.Username == "123" && this.Password == "123")
+            {
+                yield break;
+            }
+            else
+            {
+                yield return new ValidationResult("登入帳號或密碼錯誤", new string[] { "Username" });
+            }
+        }
     }
 }
