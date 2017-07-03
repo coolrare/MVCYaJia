@@ -11,7 +11,9 @@ namespace MVCYaJia.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +23,17 @@ namespace MVCYaJia.Models
         }
     
         public int ProductId { get; set; }
+        [Required(ErrorMessage = "必填欄位: {0}")]
+        [DisplayName("商品名稱")]
         public string ProductName { get; set; }
+        [Required]
+        [DisplayName("商品價格")]
         public Nullable<decimal> Price { get; set; }
+        [Required]
+        [DisplayName("是否上架")]
         public Nullable<bool> Active { get; set; }
+        [Required]
+        [DisplayName("庫存量")]
         public Nullable<decimal> Stock { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
