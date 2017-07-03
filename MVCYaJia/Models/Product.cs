@@ -28,6 +28,7 @@ namespace MVCYaJia.Models
         public string ProductName { get; set; }
         [Required]
         [DisplayName("商品價格")]
+        [DisplayFormat(DataFormatString = "{0:0}")]
         public Nullable<decimal> Price { get; set; }
         [Required]
         [DisplayName("是否上架")]

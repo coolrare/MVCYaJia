@@ -38,7 +38,15 @@
             @Html.DisplayFor(modelItem => item.Active)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Stock)
+            @if (item.Stock <= 10)
+            {
+                <span style="color: red">@Html.DisplayFor(modelItem => item.Stock)</span>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.Stock)
+            }
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
