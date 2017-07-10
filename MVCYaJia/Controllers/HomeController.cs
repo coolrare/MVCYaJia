@@ -14,9 +14,10 @@ namespace MVCYaJia.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [Route("hello/world/{name}")]
+        public ActionResult About(string name)
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Hello " + name + ".";
 
             return View();
         }
