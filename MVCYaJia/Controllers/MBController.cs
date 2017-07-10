@@ -9,16 +9,15 @@ namespace MVCYaJia.Controllers
 {
     public class MBController : BaseController
     {
-        public ActionResult Index(int id)
+        [PrepareViewBag, CheckKey]
+        public ActionResult Index()
         {
-            ViewData["T1"] = id;
-            ViewBag.T1 = id;
-
             ViewData.Model = repo.Find(1);
 
             return View();
         }
 
+        [PrepareViewBag]
         public ActionResult ProductEdit(int id)
         {
             return View(repo.Find(id));

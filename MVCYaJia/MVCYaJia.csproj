@@ -129,6 +129,8 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MBController.cs" />
+    <Compile Include="Controllers\CheckKeyAttribute.cs" />
+    <Compile Include="Controllers\PrepareViewBagAttribute.cs" />
     <Compile Include="Controllers\ProductBatachUpdateVM.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
