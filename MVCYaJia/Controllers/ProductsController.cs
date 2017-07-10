@@ -15,9 +15,31 @@ namespace MVCYaJia.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var data = repo.Get前10筆商品資料();
+            ViewData.Model = repo.Get前10筆商品資料();
 
-            return View(data);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult BatchUpdate(ProductBatachUpdateVM[] data)
+        {
+            // "data[1].Stock"
+            if (ModelState.IsValid)
+            {
+                foreach (var item in data)
+                {
+                    var aa = repo.Find(item.ProductId);
+                    aa.Stock = item.Stock;
+                    aa.Active = item.Active;
+                }
+
+                repo.UnitOfWork.Commit();
+
+                return RedirectToAction("Index");
+            }
+
+            ViewData.Model = repo.Get前10筆商品資料();
+            return View();
         }
 
         // GET: Products/Details/5

@@ -27,7 +27,7 @@ namespace MVCYaJia.Controllers
         [HttpPost]
         public ActionResult ProductEdit(int id, Product data)
         {
-            return Json(data, JsonRequestBehavior.AllowGet);
+            return Json(repo.Find(id), JsonRequestBehavior.AllowGet);
         }
 
 

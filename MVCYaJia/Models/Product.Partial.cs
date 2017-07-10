@@ -16,7 +16,7 @@ namespace MVCYaJia.Models
         public int ProductId { get; set; }
         [Required(ErrorMessage = "必填欄位: {0}")]
         [DisplayName("商品名稱")]
-        [ValidateTaiwanSID(ErrorMessage = "身分證字號格式錯誤")]
+        //[ValidateTaiwanSID(ErrorMessage = "身分證字號格式錯誤")]
         public string ProductName { get; set; }
         [Required]
         [DisplayName("商品價格")]

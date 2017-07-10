@@ -11,6 +11,10 @@ namespace MVCYaJia.Controllers
     {
         public ProductRepository repo = RepositoryHelper.GetProductRepository();
 
+        public BaseController()
+        {
+            repo.UnitOfWork.Context.Configuration.LazyLoadingEnabled = false;
+        }
         //protected override void HandleUnknownAction(string actionName)
         //{
         //    this.Redirect("/").ExecuteResult(this.ControllerContext);
