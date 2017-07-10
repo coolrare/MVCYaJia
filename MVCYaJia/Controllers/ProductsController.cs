@@ -100,13 +100,13 @@ namespace MVCYaJia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product)
+        public ActionResult Edit(int id, FormCollection form)
         {
-            if (ModelState.IsValid)
+            var product = repo.Find(id);
+
+            if (TryUpdateModel(product, new string[] { "Stock", "Active", "Price" }))
             {
-                var db = repo.UnitOfWork.Context;
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                repo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
             return View(product);
