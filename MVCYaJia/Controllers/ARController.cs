@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVCYaJia.Controllers
 {
-    public class ARController : Controller
+    public class ARController : BaseController
     {
         public ActionResult Index()
         {
@@ -42,6 +42,13 @@ namespace MVCYaJia.Controllers
         public ActionResult File2()
         {
             return File(Server.MapPath("~/Content/3FC248D17A.jpeg"), "image/jpeg", "美女圖.jpg");
+        }
+
+        public ActionResult Json1()
+        {
+            repo.UnitOfWork.Context.Configuration.LazyLoadingEnabled = false;
+            var data = repo.All().Take(5);
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
     }
 }
