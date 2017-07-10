@@ -33,5 +33,15 @@ namespace MVCYaJia.Controllers
         {
             return View("GoBack");
         }
+
+        public ActionResult File1()
+        {
+            return File(Server.MapPath("~/Content/3FC248D17A.jpeg"), "image/jpeg");
+        }
+
+        public ActionResult File2()
+        {
+            return File(Server.MapPath("~/Content/3FC248D17A.jpeg"), "image/jpeg", "美女圖.jpg");
+        }
     }
 }
