@@ -1,9 +1,6 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 @using System.Data.Entity.Validation
-@{
-    ViewBag.Title = "錯誤";
-}
-
+@{ ViewBag.Title = "錯誤"; }
 <h1 class="text-danger">@Model.ControllerName/@Model.ActionName 錯誤。</h1>
 <h2 class="text-danger">處理您的要求時發生錯誤。</h2>
 @{ 

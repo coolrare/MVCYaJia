@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCYaJia.Models;
+using System.Data.Entity.Validation;
 
 namespace MVCYaJia.Controllers
 {
@@ -100,6 +101,8 @@ namespace MVCYaJia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [HandleError(View= "Error_DbEntityValidationException",
+            ExceptionType = typeof(DbEntityValidationException))]
         public ActionResult Edit(int id, FormCollection form)
         {
             var product = repo.Find(id);
