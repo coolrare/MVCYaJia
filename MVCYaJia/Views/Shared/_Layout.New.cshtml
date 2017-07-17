@@ -368,10 +368,14 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="icon-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="@Url.Action("Home", "VT")">Home</a>
                         <i class="icon-angle-right"></i>
                     </li>
-                    <li><a href="#">Dashboard</a></li>
+                    @RenderSection("nav", required: false)
+                    @if (!IsSectionDefined("nav"))
+                    {
+                        <li><a href="#">N/A</a></li>
+                    }
                 </ul>
 
                 @RenderBody()
@@ -459,6 +463,8 @@
     <script src="~/js/retina.js"></script>
     <script src="~/js/custom.js"></script>
     <!-- end: JavaScript-->
+
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
