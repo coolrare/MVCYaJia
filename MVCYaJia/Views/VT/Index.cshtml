@@ -1,14 +1,23 @@
 ﻿@{ Layout = ""; }
-
-@DateTime.Now
-
 @{ 
-    var dt = DateTime.Now;
-
-    @:Hello World
-
-    <span>Hello Span</span>
-
-    <text>Hello TEXT</text>
-
+    var numbers = new int[] { 1, 2, 3, 4, 5 };
 }
+
+@foreach (var i in numbers)
+{
+    @i
+}
+
+
+@foreach (var i in numbers)
+{
+    @(i+" ")
+}
+
+
+<ul>
+@foreach (var i in numbers)
+{
+    <li>@i</li>
+}
+</ul>
