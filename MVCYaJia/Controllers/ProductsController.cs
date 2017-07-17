@@ -14,9 +14,22 @@ namespace MVCYaJia.Controllers
     public class ProductsController : BaseController
     {
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(bool? ActiveFilter, string ProductNameFilter)
         {
-            ViewData.Model = repo.Get前10筆商品資料();
+            var data = repo.All();
+            if (ActiveFilter.HasValue)
+            {
+                data = data.Where(p => p.Active == ActiveFilter);
+            }
+
+            ViewData.Model = data.Take(10);
+
+            //ViewData.Model = repo.Get前10筆商品資料();
+
+            ViewBag.ActiveFilter = new SelectList(new string[] { "True", "False" });
+
+            var items = repo.All().Select(p => new { p.ProductId, p.ProductName });
+            ViewBag.ProductNameFilter = new SelectList(items, "ProductId", "ProductName");
 
             return View();
         }
@@ -101,7 +114,7 @@ namespace MVCYaJia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [HandleError(View= "Error_DbEntityValidationException",
+        [HandleError(View = "Error_DbEntityValidationException",
             ExceptionType = typeof(DbEntityValidationException))]
         public ActionResult Edit(int id, FormCollection form)
         {
