@@ -13,7 +13,7 @@ namespace MVCYaJia.Controllers
 
         public BaseController()
         {
-            repo.UnitOfWork.Context.Configuration.LazyLoadingEnabled = false;
+            repo.UnitOfWork.Context.Configuration.LazyLoadingEnabled = true;
         }
         //protected override void HandleUnknownAction(string actionName)
         //{

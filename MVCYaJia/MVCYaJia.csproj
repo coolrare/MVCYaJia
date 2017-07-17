@@ -130,6 +130,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MBController.cs" />
     <Compile Include="Controllers\CheckKeyAttribute.cs" />
+    <Compile Include="Controllers\OrderLinesController.cs" />
     <Compile Include="Controllers\PrepareViewBagAttribute.cs" />
     <Compile Include="Controllers\ProductBatachUpdateVM.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -324,6 +325,8 @@
     <Content Include="Views\VT\Home.cshtml" />
     <Content Include="Views\Shared\_Layout.New.cshtml" />
     <Content Include="Views\VT\_ViewStart.cshtml" />
+    <Content Include="Views\OrderLines\Index.cshtml" />
+    <Content Include="Views\Products\OrderLineList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
