@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ProductBatachUpdateVM.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\VTController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -301,6 +302,7 @@
     <Content Include="Views\MB\Index.cshtml" />
     <Content Include="Views\MB\ProductEdit.cshtml" />
     <Content Include="Views\Shared\Error_DbEntityValidationException.cshtml" />
+    <Content Include="Views\VT\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
