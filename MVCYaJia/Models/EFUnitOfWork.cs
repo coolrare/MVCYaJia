@@ -1,4 +1,5 @@
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace MVCYaJia.Models
 {
@@ -12,8 +13,22 @@ namespace MVCYaJia.Models
 		}
 
 		public void Commit()
-		{
-			Context.SaveChanges();
+        {
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var error in ex.EntityValidationErrors)
+                {
+                    foreach (var verr in error.ValidationErrors)
+                    {
+                        
+                    }
+                }
+                throw ex;
+            }
 		}
 		
 		public bool LazyLoadingEnabled

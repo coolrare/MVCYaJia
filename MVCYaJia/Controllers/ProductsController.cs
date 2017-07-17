@@ -104,11 +104,11 @@ namespace MVCYaJia.Controllers
         {
             var product = repo.Find(id);
 
-            if (TryUpdateModel(product, new string[] { "Stock", "Active", "Price" }))
-            {
-                repo.UnitOfWork.Commit();
-                return RedirectToAction("Index");
-            }
+            TryUpdateModel(product, new string[] { "ProductName", "Stock", "Active", "Price" });
+
+            repo.UnitOfWork.Commit();
+            return RedirectToAction("Index");
+
             return View(product);
         }
 
