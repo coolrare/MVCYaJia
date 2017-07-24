@@ -22,9 +22,9 @@ namespace WebApiYaJia.Controllers
         }
 
         // GET: api/Products
-        public IQueryable<Product> GetProduct()
+        public IHttpActionResult GetProduct()
         {
-            return db.Product.Take(10);
+            return Ok(db.Product.Take(10));
         }
 
         // GET: api/Products/5
