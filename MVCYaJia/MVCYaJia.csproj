@@ -140,6 +140,7 @@
     <Compile Include="Controllers\MBController.cs" />
     <Compile Include="Controllers\CheckKeyAttribute.cs" />
     <Compile Include="Controllers\OrderLinesController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PrepareViewBagAttribute.cs" />
     <Compile Include="Controllers\ProductBatachUpdateVM.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -348,8 +349,27 @@
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CodeTemplates\ApiControllerEmpty\" />
+    <Folder Include="CodeTemplates\ApiControllerWithActions\" />
+    <Folder Include="CodeTemplates\ApiControllerWithContext\" />
+    <Folder Include="CodeTemplates\ApiDependencyCodeGenerator\" />
+    <Folder Include="CodeTemplates\MvcArea\" />
+    <Folder Include="CodeTemplates\MvcControllerEmpty\" />
+    <Folder Include="CodeTemplates\MvcControllerWithActions\" />
+    <Folder Include="CodeTemplates\MvcControllerWithContext\" />
+    <Folder Include="CodeTemplates\MvcFullDependencyCodeGenerator\" />
+    <Folder Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\" />
+    <Folder Include="CodeTemplates\MvcViewWithoutModel\" />
+    <Folder Include="CodeTemplates\MvcView\" />
+    <Folder Include="CodeTemplates\ODataControllerWithActions\" />
+    <Folder Include="CodeTemplates\ODataControllerWithContext\" />
     <Folder Include="css\" />
     <Folder Include="font\" />
     <Folder Include="Images\" />
