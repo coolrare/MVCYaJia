@@ -12,6 +12,9 @@ using WebApiYaJia.Models;
 
 namespace WebApiYaJia.Controllers
 {
+    /// <summary>
+    /// 商品資料
+    /// </summary>
     public class ProductsController : ApiController
     {
         private FabricsEntities db = new FabricsEntities();
@@ -22,12 +25,21 @@ namespace WebApiYaJia.Controllers
         }
 
         // GET: api/Products
+        /// <summary>
+        /// 取得所有商品
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult GetProduct()
         {
             return Ok(db.Product.Take(10));
         }
 
         // GET: api/Products/5
+        /// <summary>
+        /// 取得單件商品
+        /// </summary>
+        /// <param name="id">請輸入 ProductId</param>
+        /// <returns></returns>
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
