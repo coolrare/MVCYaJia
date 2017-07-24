@@ -3,5 +3,8 @@
     ViewBag.Title = "Test";
 }
 
-<h2>Test 123</h2>
+<h2 id="now">Test 123</h2>
+
+@Ajax.ActionLink("取得時間", "GetTime", new AjaxOptions() { UpdateTargetId = "now" })
+
 

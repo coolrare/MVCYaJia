@@ -34,6 +34,11 @@ namespace MVCYaJia.Controllers
             return View();
         }
 
+        public ActionResult GetTime()
+        {
+            return Content(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fffff"));
+        }
+
         public ActionResult Login()
         {
             return View();
