@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCYaJia.Models;
+using PagedList;
 
 namespace MVCYaJia.Controllers
 {
@@ -15,10 +16,13 @@ namespace MVCYaJia.Controllers
         private FabricsEntities db = new FabricsEntities();
 
         // GET: Clients
-        public ActionResult Index()
+        public ActionResult Index(int pageNo = 1)
         {
-            var client = db.Client.Include(c => c.Occupation);
-            return View(client.Take(10));
+            var client = db.Client.Include(c => c.Occupation).OrderBy(p => p.ClientId);
+
+            var data = client.ToPagedList(pageNo, 5);
+
+            return View(data);
         }
 
         // GET: Clients/Details/5
