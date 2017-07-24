@@ -24,6 +24,7 @@ namespace MVCYaJia.Models
         public Nullable<decimal> Price { get; set; }
         [Required]
         [DisplayName("是否上架")]
+        [UIHint("ProductActive")]
         public Nullable<bool> Active { get; set; }
         [Required]
         [DisplayName("庫存量")]

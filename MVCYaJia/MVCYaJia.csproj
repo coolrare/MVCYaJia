@@ -329,7 +329,7 @@
     <Content Include="Views\Products\OrderLineList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Product.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProductActive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
